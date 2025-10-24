@@ -2272,17 +2272,17 @@ ul, ol {
 
   .table-content {
     display: grid;
-    grid-template-columns: 80px repeat(7, 1fr);
+    grid-template-columns: 90px repeat(7, 110px);
     gap: 0;
     width: 100%;
-    min-width: 420px;
+    min-width: 860px;
   }
 
   .day-header {
     font-weight: bold;
     background: rgba(255, 255, 255, 0.05);
     color: var(--color-accent);
-    padding: var(--space-1);
+    padding: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
@@ -2290,9 +2290,14 @@ ul, ol {
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0px;
     box-sizing: border-box;
-    font-size: 10px;
+    font-size: 12px;
+    line-height: 1.2;
+    height: 42px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .time-column {
@@ -2304,39 +2309,43 @@ ul, ol {
     justify-content: center;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    min-width: 80px;
-    width: 80px;
+    width: 90px;
     box-sizing: border-box;
-    padding: var(--space-1);
-    font-size: 10px;
+    padding: 8px;
+    font-size: 11px;
+    line-height: 1.2;
+    height: 42px;
+    white-space: normal;
   }
 
   .courses-column {
     flex: 1;
     display: flex;
-    padding: var(--space-1);
-    gap: 2px;
+    padding: 4px;
+    gap: 0px;
     align-items: stretch;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 110px;
   }
 
   .course-item {
     flex: 1;
-    font-size: 9px;
+    font-size: 12px;
     color: var(--color-white);
     text-align: center;
-    padding: 4px 2px;
+    padding: 6px;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius-sm);
-    min-height: 30px;
+    border-radius: 2px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1;
+    line-height: 1.2;
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     box-sizing: border-box;
+    white-space: normal;
   }
 
   .cta-actions {
@@ -2426,6 +2435,35 @@ ul, ol {
 
   .burger-icon {
     display: none !important;
+  }
+
+  .table-content {
+    grid-template-columns: 120px repeat(7, 1fr);
+    min-width: 500px;
+  }
+
+  .day-header {
+    padding: var(--space-2);
+    font-size: var(--text-xs);
+  }
+
+  .time-column {
+    min-width: 120px;
+    width: 120px;
+    padding: var(--space-1);
+    font-size: inherit;
+  }
+
+  .courses-column {
+    padding: var(--space-2);
+    gap: var(--space-1);
+  }
+
+  .course-item {
+    font-size: var(--text-xs);
+    padding: var(--space-1);
+    min-height: 35px;
+    line-height: 1.1;
   }
   
   .trainer-content {
