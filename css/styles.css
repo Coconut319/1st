@@ -2190,9 +2190,6 @@ ul, ol {
   .trainer-stats {
     grid-template-columns: repeat(3, 1fr);
   }
-  
-/* Responsive Design for Simplified About Page */
-@media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr;
     gap: var(--space-8);
@@ -2251,116 +2248,151 @@ ul, ol {
     font-size: var(--text-base);
   }
 
-  .info-item .info-content p {
-    font-size: var(--text-xs);
-  }
-
-  /* Training Schedule Responsive */
-  .opening-hours-table {
-    max-width: 100%;
-    width: 100%;
-    margin: 0 auto;
-    padding: var(--space-4);
-    overflow-x: visible;
-  }
-
-  .opening-hours-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-  }
-
-  .table-content {
-    display: grid;
-    grid-template-columns: 90px repeat(7, 110px);
-    gap: 0;
-    width: 100%;
-    min-width: 860px;
-  }
-
-  .day-header {
-    font-weight: bold;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--color-accent);
-    padding: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    letter-spacing: 0px;
-    box-sizing: border-box;
-    font-size: 12px;
-    line-height: 1.2;
-    height: 42px;
-    white-space: nowrap;
+  .opening-hours-table.mobile-cards {
+    background: var(--color-gray-800);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-accent);
     overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .time-column {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--color-accent);
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    width: 90px;
+    box-shadow: 0 4px 20px rgba(255, 193, 7, 0.1);
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto;
+    height: auto;
     box-sizing: border-box;
-    padding: 8px;
-    font-size: 11px;
-    line-height: 1.2;
-    height: 42px;
-    white-space: normal;
   }
 
-  .courses-column {
-    flex: 1;
-    display: flex;
-    padding: 4px;
-    gap: 0px;
-    align-items: stretch;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    width: 110px;
-  }
-
-  .course-item {
-    flex: 1;
-    font-size: 12px;
-    color: var(--color-white);
+  .mobile-cards .table-header {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #E6C200 100%);
+    padding: var(--space-4);
     text-align: center;
-    padding: 6px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 2px;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1.2;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 100%;
-    box-sizing: border-box;
-    white-space: normal;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .cta-actions {
-    flex-direction: column;
+  .mobile-cards .table-header h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin: 0 0 var(--space-2) 0;
+    color: var(--color-white);
+  }
+
+  .mobile-cards .table-header p {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+
+  /* Hide original table content and show cards */
+  .mobile-cards .table-content,
+  .mobile-cards .opening-hours-wrapper {
+    display: none;
+  }
+
+  /* Mobile schedule cards container */
+  .mobile-cards .mobile-schedule-container {
+    display: block;
+    padding: 0;
+  }
+
+  .mobile-schedule-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .schedule-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    transition: all var(--transition-base);
+  }
+
+  .schedule-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .schedule-card-header {
+    display: flex;
     align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
+
+  .schedule-day {
+    font-family: var(--font-headline);
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
-  
-  .footer-links {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+
+  .schedule-courses {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .schedule-time {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: var(--radius-base);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .schedule-time-icon {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+  }
+
+  .schedule-time-text {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-white);
+  }
+
+  .schedule-course {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-gray-200);
+    margin-left: var(--space-6);
+  }
+
+  .schedule-course.kids {
+    color: #4CAF50;
+  }
+
+  .schedule-course.adults {
+    color: #2196F3;
+  }
+
+  .schedule-card.no-training {
+    opacity: 0.6;
+  }
+
+  .schedule-card.no-training .schedule-time {
+    background: rgba(255, 255, 255, 0.03);
+    border-left-color: var(--color-gray-500);
+  }
+
+  .schedule-card.no-training .schedule-time-text {
+    color: var(--color-gray-400);
+  }
+
+  /* Hide old mobile styles on larger screens */
+  @media (min-width: 769px) {
+    .mobile-cards .mobile-schedule-container {
+      display: none;
+    }
   }
 
   .cookie-content {
@@ -2437,34 +2469,6 @@ ul, ol {
     display: none !important;
   }
 
-  .table-content {
-    grid-template-columns: 120px repeat(7, 1fr);
-    min-width: 500px;
-  }
-
-  .day-header {
-    padding: var(--space-2);
-    font-size: var(--text-xs);
-  }
-
-  .time-column {
-    min-width: 120px;
-    width: 120px;
-    padding: var(--space-1);
-    font-size: inherit;
-  }
-
-  .courses-column {
-    padding: var(--space-2);
-    gap: var(--space-1);
-  }
-
-  .course-item {
-    font-size: var(--text-xs);
-    padding: var(--space-1);
-    min-height: 35px;
-    line-height: 1.1;
-  }
   
   .trainer-content {
     grid-template-columns: 1fr 1fr;
@@ -2494,5 +2498,12 @@ ul, ol {
   
   .section-title {
     font-size: var(--text-5xl);
+  }
+}
+
+/* Hide mobile schedule cards on desktop */
+@media (min-width: 768px) {
+  .mobile-schedule-container {
+    display: none;
   }
 }
